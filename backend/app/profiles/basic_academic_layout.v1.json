@@ -1,0 +1,12 @@
+{
+  "id": "basic-academic-layout",
+  "version": 1,
+  "label": "Basic Academic Layout",
+  "disclaimer": "A general-purpose layout. It is not an official journal or conference standard; check your target venue's own author guidelines.",
+  "page": { "size": "A4", "width_mm": 210, "height_mm": 297, "margin_in": 1.0 },
+  "body": { "font": "Times New Roman", "size_pt": 12, "line_spacing": 1.5, "space_after_pt": 6 },
+  "headings": {
+    "Heading 1": { "size_pt": 14, "bold": true },
+    "Heading 2": { "size_pt": 12, "bold": true }
+  }
+}

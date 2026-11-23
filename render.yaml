@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: paperalign-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.7
+      - key: MAX_UPLOAD_MB
+        value: "10"
+      - key: MAX_CONCURRENT_JOBS
+        value: "1"
+      - key: WORKER_MEMORY_MB
+        value: "400"
+      - key: TRUST_PROXY_HOPS
+        value: "1"
+      - key: ALLOWED_ORIGINS        # e.g. https://your-app.vercel.app
+        sync: false
+      - key: ALLOWED_ORIGIN_REGEX   # optional, e.g. https://your-app-.*\.vercel\.app
+        sync: false
